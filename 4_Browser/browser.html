@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Synth</title>
+
+<script src="Tone.js"></script>
+<script src="scribbletune.js"></script>
+
+</head>
+<body>	
+
+<script>
+//------ 1
+	// //create a synth and connect it to the master output (your speakers)
+	// var synth = new Tone.Synth().toMaster();
+
+	// //play a middle 'C' for the duration of an 8th note
+	// synth.triggerAttackRelease("C4", "8n");
+
+
+//------ 2
+	// //play a note every quarter-note
+	// var loop = new Tone.Loop(function(time){
+	// 	synth.triggerAttackRelease("C2", "8n", time);
+	// }, "4n");
+
+	// //loop between the first and fourth measures of the Transport's timeline
+	// loop.start("1m").stop("4m");
+
+	// Tone.Transport.start();
+
+
+//------ 3
+	//pass in some initial values for the filter and filter envelope
+	// var synth = new Tone.Synth({
+	// 	"oscillator" : {
+	// 		"type" : "pwm",
+	// 		"modulationFrequency" : 0.2
+	// 	},
+	// 	"envelope" : {
+	// 		"attack" : 0.02,
+	// 		"decay" : 0.1,
+	// 		"sustain" : 0.2,
+	// 		"release" : 0.9,
+	// 	}
+	// }).toMaster();
+
+	// //start the note "D3" one second from now
+	// synth.triggerAttack("D3", "+1");
+
+	// //a 4 voice Synth
+	// var polySynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+	// //play a chord
+	// polySynth.triggerAttackRelease(["C4", "E4", "G4", "B4"], "2n");
+
+//------ 4
+	scribble.clip({ synth: 'Synth', pattern: '-x', notes: 'C4 D4 C4 D#4 C4 D4 C4 Bb3' }).start();
+	Tone.Transport.start();
+</script>
+
+</body>
+</html>
